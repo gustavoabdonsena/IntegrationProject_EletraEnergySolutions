@@ -9,6 +9,7 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.input.ContextMenuEvent;
 
+import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -28,9 +29,12 @@ public class Main_Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+b
         // Line up Select Section
         comboBox.setItems(FXCollections.observableArrayList(Lineup.values()));
+        comboBox.valueProperty().addListener((obs, oldValue, newValue) -> {
+            
+        });
 
         TreeItem<String> rootItem = new TreeItem<>("Tree");
         TreeItem<String> branch = new TreeItem<>("Branch");
@@ -42,7 +46,7 @@ public class Main_Controller implements Initializable {
     }
 
     @FXML
-    void selectLineup(ContextMenuEvent event) {
-        System.out.println(event.getTarget());
+    void selectLineup(ActionEvent event) {
+
     }
 }
