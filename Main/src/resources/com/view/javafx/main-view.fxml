@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Main_Controller">
+   <children>
+      <Separator layoutY="28.0" prefHeight="4.0" prefWidth="600.0" />
+      <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gustavo Abdon" textAlignment="CENTER" wrappingWidth="104.037109375">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font></Text>
+      <TilePane alignment="CENTER" layoutY="44.0" prefHeight="63.0" prefWidth="600.0">
+         <children>
+            <Accordion prefHeight="355.0" prefWidth="599.0">
+              <panes>
+                <TitledPane animated="false" prefHeight="271.0" prefWidth="599.0" text="Linhas">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="205.0" prefWidth="610.0">
+                           <children>
+                              <Accordion layoutX="213.0" layoutY="58.0" prefHeight="42.0" prefWidth="171.0" />
+                              <Label layoutX="106.0" layoutY="50.0" prefHeight="17.0" prefWidth="130.0" text="Selecione uma linha" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="comboBox" layoutX="224.0" layoutY="46.0" onContextMenuRequested="#selectLineup" prefWidth="150.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane animated="false" prefHeight="231.0" prefWidth="609.0" text="Modelos">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TreeView fx:id="treeView" layoutX="186.0" layoutY="13.0" onContextMenuRequested="#selectItem" prefHeight="179.0" prefWidth="226.0" />
+                              <Label layoutX="57.0" layoutY="14.0" prefHeight="20.0" prefWidth="120.0" text="Lista de Modelos">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+         </children>
+      </TilePane>
+   </children>
+</AnchorPane>
