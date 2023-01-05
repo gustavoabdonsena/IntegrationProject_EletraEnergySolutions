@@ -24,9 +24,7 @@ public enum Models {
     CRONOS_6021_NG(Categoryes.CRONOS_NG,"Cronos 6021‑NG"),
     CRONOS_6031_NG(Categoryes.CRONOS_NG,"Cronos 6031‑NG"),
     CRONOS_7021_NG(Categoryes.CRONOS_NG," Cronos 7021‑NG"),
-    CRONOS_7023_NG(Categoryes.CRONOS_NG,"Cronos 7023‑NG"),
-
-    ;
+    CRONOS_7023_NG(Categoryes.CRONOS_NG,"Cronos 7023‑NG");
 
 
     private String modelName;
@@ -37,12 +35,12 @@ public enum Models {
         this.modelName = modelName;
     }
 
-    public String getModelName() {
+    @Override
+    public String toString() {
         return modelName;
     }
 
-    @Override
-    public String toString() {
-        return super.toString();
+    public Categoryes getCategoryes() {
+        return categoryes;
     }
 }

@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 
 import java.net.URL;
 import java.util.*;
+import java.util.stream.Stream;
 
 public class Main_Controller implements Initializable {
 
@@ -49,18 +50,28 @@ public class Main_Controller implements Initializable {
 
     public void treeReference(){
 
-            //Categories
-
-            TreeItem<String> treeRoot = new TreeItem<>(comboBox.getValue().toString());
+            //Lineup
+            TreeItem treeRoot = new TreeItem<>(comboBox.getValue());
 
             //Models
-            Models[] m = Models.values();
+            for(Categoryes cat: Categoryes.values()){
 
-            for(Models models: m){
-                treeRoot.getChildren().add(new TreeItem(comboBox.getValue()));
+                if(cat.getLineup().equals(comboBox.getValue())){
+                    TreeItem categoryItem = new TreeItem(cat);
+                    treeRoot.getChildren().add(categoryItem);
+
+                    for (Models mod: Models.values()){
+                        if (mod.getCategoryes().equals(categoryItem.getValue())){
+                            categoryItem.getChildren().add( new TreeItem<>(mod));
+                        }
+
+                    }
+                }
+
             }
 
-        treeView.setRoot(treeRoot);
+            treeView.setRoot(treeRoot);
+
 
     }
 

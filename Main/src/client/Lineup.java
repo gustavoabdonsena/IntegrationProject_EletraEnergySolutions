@@ -11,7 +11,8 @@ public enum Lineup {
 
     @Override
     public String toString() {
-        return super.toString();
+        return lineupName;
     }
+
 
 }

@@ -21,6 +21,10 @@ public enum Categoryes {
 
     @Override
     public String toString() {
-        return super.toString();
+        return name;
+    }
+
+    public Lineup getLineup() {
+        return lineup;
     }
 }
