@@ -52,7 +52,7 @@ public class Main_Controller implements Initializable {
 
             //Lineup
             TreeItem treeRoot = new TreeItem<>(comboBox.getValue());
-
+            treeRoot.setExpanded(true);
             //Models
             for(Categoryes cat: Categoryes.values()){
 
