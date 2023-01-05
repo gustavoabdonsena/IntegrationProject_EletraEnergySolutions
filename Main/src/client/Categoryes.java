@@ -1,7 +1,5 @@
 package client;
 
-import javax.sound.sampled.Line;
-
 public enum Categoryes {
 
     ARESTB(Lineup.ARES,"Ares TB"),

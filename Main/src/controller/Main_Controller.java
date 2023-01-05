@@ -1,7 +1,7 @@
 package controller;
 
-import client.Lineup;
 import client.Categoryes;
+import client.Lineup;
 import client.Models;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -9,8 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.net.URL;
-import java.util.*;
-import java.util.stream.Stream;
+import java.util.ResourceBundle;
 
 public class Main_Controller implements Initializable {
 
@@ -67,12 +66,8 @@ public class Main_Controller implements Initializable {
 
                     }
                 }
-
             }
-
             treeView.setRoot(treeRoot);
-
-
     }
 
 }

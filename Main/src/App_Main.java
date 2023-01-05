@@ -21,7 +21,7 @@ public class App_Main extends Application {
 
         Scene scene = new Scene(fxmlLoader.load(),550,400);
 
-        primaryStage.setResizable(false);
+        primaryStage.setResizable(true);
         primaryStage.initStyle(StageStyle.DECORATED);
         primaryStage.setScene(scene);
         primaryStage.show();
