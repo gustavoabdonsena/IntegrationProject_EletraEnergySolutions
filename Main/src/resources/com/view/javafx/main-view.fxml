@@ -20,9 +20,9 @@
          </font></Text>
       <TilePane alignment="CENTER" layoutY="44.0" prefHeight="63.0" prefWidth="600.0">
          <children>
-            <Accordion prefHeight="355.0" prefWidth="599.0">
+            <Accordion fx:id="acordion" prefHeight="355.0" prefWidth="599.0">
               <panes>
-                <TitledPane animated="false" prefHeight="271.0" prefWidth="599.0" text="Linhas">
+                  <TitledPane fx:id="titledLineup" animated="false" prefHeight="271.0" prefWidth="599.0" text="Linhas">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="205.0" prefWidth="610.0">
                            <children>
@@ -32,17 +32,17 @@
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <ComboBox fx:id="comboBox" layoutX="224.0" layoutY="46.0" onContextMenuRequested="#selectLineup" prefWidth="150.0" />
+                              <ComboBox fx:id="comboBox" layoutX="224.0" layoutY="46.0" prefHeight="25.0" prefWidth="168.0" />
                            </children>
                         </AnchorPane>
                   </content>
-                </TitledPane>
-                <TitledPane animated="false" prefHeight="231.0" prefWidth="609.0" text="Modelos">
+                  </TitledPane>
+                <TitledPane animated="false" expanded="false" prefHeight="231.0" prefWidth="609.0" text="Modelos">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TreeView fx:id="treeView" layoutX="186.0" layoutY="13.0" onContextMenuRequested="#selectItem" prefHeight="179.0" prefWidth="226.0" />
-                              <Label layoutX="57.0" layoutY="14.0" prefHeight="20.0" prefWidth="120.0" text="Lista de Modelos">
+                              <TreeView fx:id="treeView" layoutX="143.0" layoutY="19.0" prefHeight="266.0" prefWidth="366.0" />
+                              <Label layoutX="23.0" layoutY="22.0" prefHeight="20.0" prefWidth="120.0" text="Lista de Modelos">
                                  <font>
                                     <Font size="14.0" />
                                  </font>

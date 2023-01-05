@@ -1,16 +1,17 @@
 package client;
 
 public enum Lineup {
-    CRONOS("Cronos"), ARES("Ares");
+    CRONOS("Cronos"),
+    ARES("Ares");
 
-    public String linupProp;
+    private String lineupName;
 
-    Lineup(String name){
-        linupProp = name;
+    Lineup(String lineupName){
+        this.lineupName = lineupName;
     }
 
     public String getLinupProp() {
-        return linupProp;
+        return lineupName;
     }
 
     @Override
