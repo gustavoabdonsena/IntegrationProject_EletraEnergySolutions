@@ -1,14 +1,13 @@
 package controller;
 
 import client.Lineup;
+import client.Categoryes;
 import client.Models;
-import client.SubModels;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
-import javax.sound.sampled.Line;
 import java.net.URL;
 import java.util.*;
 
@@ -24,6 +23,9 @@ public class Main_Controller implements Initializable {
     private TitledPane titledLineup;
 
     @FXML
+    private TitledPane titledModels;
+
+    @FXML
     private Accordion acordion;
 
     @Override
@@ -31,54 +33,34 @@ public class Main_Controller implements Initializable {
 
         //Titled expanded 1
         acordion.setExpandedPane(titledLineup);
+        titledModels.setDisable(true);
 
         // Line up Select Section
         comboBox.setItems(FXCollections.observableArrayList(Lineup.values()));
 
         // Evente Listener ComboBox
         comboBox.valueProperty().addListener((obs, oldValue, newValue) -> {
-            selectBox(comboBox);
+            treeReference();
+            titledModels.setDisable(false);
+            titledModels.setExpanded(true);
         });
 
     }
 
-    public void selectBox(ComboBox comboBox){
+    public void treeReference(){
 
-        if (comboBox.getSelectionModel().getSelectedItem().equals(Lineup.CRONOS)) {
             //Categories
-            TreeItem<String> treeRoot = new TreeItem<>(Models.values().toString());
+
+            TreeItem<String> treeRoot = new TreeItem<>(comboBox.getValue().toString());
 
             //Models
-            SubModels[] m = SubModels.values();
+            Models[] m = Models.values();
 
-            for(SubModels models: m){
-                treeRoot.getChildren().add(new TreeItem(models));
+            for(Models models: m){
+                treeRoot.getChildren().add(new TreeItem(comboBox.getValue()));
             }
 
-            treeView.setRoot(treeRoot);
-
-        }else
-
-            //Model AresTB
-        
-            if(comboBox.getSelectionModel().getSelectedItem().equals(Lineup.ARES)){
-            System.out.println("Ares Selected");
-
-            TreeItem<String> rootItemTB = new TreeItem<>(Models.ARESTB.toString());
-
-            rootItemTB.getChildren().addAll(new TreeItem<>(SubModels.values().toString()));
-
-            treeView.setRoot(rootItemTB);
-
-            //Model AresTHS
-            TreeItem<String> rootItemTHS = new TreeItem<>(Models.ARESTHS.toString());
-            TreeItem<String> branchTHS = new TreeItem<>(SubModels.values().toString());
-
-            rootItemTHS.getChildren().add(branchTHS);
-
-            treeView.setRoot(rootItemTHS);
-
-        }
+        treeView.setRoot(treeRoot);
 
     }
 
