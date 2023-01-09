@@ -1,8 +1,8 @@
-package controller;
+package src.controller;
 
-import client.Categoryes;
-import client.Lineup;
-import client.Models;
+import src.model.Categories;
+import src.model.Lineup;
+import src.model.Models;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,13 +11,13 @@ import javafx.scene.control.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Main_Controller implements Initializable {
+public class MainController implements Initializable {
 
     @FXML
-    private ComboBox comboBox;
+    private ComboBox<Lineup> comboBox;
 
     @FXML
-    private TreeView treeView;
+    private TreeView<Lineup> treeView;
 
     @FXML
     private TitledPane titledLineup;
@@ -26,13 +26,13 @@ public class Main_Controller implements Initializable {
     private TitledPane titledModels;
 
     @FXML
-    private Accordion acordion;
+    private Accordion accordion;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         //Titled expanded 1
-        acordion.setExpandedPane(titledLineup);
+        accordion.setExpandedPane(titledLineup);
         titledModels.setDisable(true);
 
         // Line up Select Section
@@ -50,24 +50,28 @@ public class Main_Controller implements Initializable {
     public void treeReference(){
 
             //Lineup
-            TreeItem treeRoot = new TreeItem<>(comboBox.getValue());
-            treeRoot.setExpanded(true);
-            //Models
-            for(Categoryes cat: Categoryes.values()){
 
-                if(cat.getLineup().equals(comboBox.getValue())){
-                    TreeItem categoryItem = new TreeItem(cat);
-                    treeRoot.getChildren().add(categoryItem);
+            ComboBox<Lineup> newValue = comboBox;
+
+            TreeItem setTreeView = new TreeItem<>(newValue.getValue());
+            setTreeView.setExpanded(true);
+
+            //Models
+            for(Categories cat: Categories.values()){
+
+                if(cat.getLineup().equals(newValue.getValue())){
+                    TreeItem<Categories> categoriItem = new TreeItem<>(cat);
+                    setTreeView.getChildren().add(categoriItem);
 
                     for (Models mod: Models.values()){
-                        if (mod.getCategoryes().equals(categoryItem.getValue())){
-                            categoryItem.getChildren().add( new TreeItem<>(mod));
+                        if (mod.getCategories().equals(categoriItem.getValue())){
+                            categoriItem.getChildren().add( new TreeItem(mod));
                         }
 
                     }
                 }
             }
-            treeView.setRoot(treeRoot);
+            treeView.setRoot(setTreeView);
     }
 
 }

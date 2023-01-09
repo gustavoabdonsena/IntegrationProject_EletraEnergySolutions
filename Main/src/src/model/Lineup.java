@@ -1,9 +1,9 @@
-package client;
+package src.model;
 
 public enum Lineup {
     CRONOS("Cronos"),
     ARES("Ares");
-    private String lineupName;
+    private final String lineupName;
 
     Lineup(String lineupName){
         this.lineupName = lineupName;
