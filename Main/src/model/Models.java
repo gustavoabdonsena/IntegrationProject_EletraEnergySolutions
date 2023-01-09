@@ -10,7 +10,7 @@ public enum Models {
     ARES_8023_2_5(  Categories.ARES_THS,    "ARES 8023 2.5"),
 
     //CRONOS old
-    CRONOS_6001_A(  Categories.CRONOS_OLD , "CRONNOS 6001-A"),
+    CRONOS_6001_A(  Categories.CRONOS_OLD , "CRONOS 6001-A"),
     CRONOS_6003(    Categories.CRONOS_OLD , "CRONOS 6003"),
     CRONOS_7023(    Categories.CRONOS_OLD , "CRONOS 7023"),
 
