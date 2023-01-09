@@ -2,11 +2,11 @@ package src.model;
 
 public enum Categories {
 
-    ARES_TB(    Lineup.ARES,"Ares TB"),
-    ARES_THS(   Lineup.ARES,"Ares THS"),
-    CRONOS_OLD( Lineup.CRONOS,"CRONOS OLD"),
-    CRONOS_L(   Lineup.CRONOS,"CRONOS L"),
-    CRONOS_NG(  Lineup.CRONOS,"CRONOS NG");
+    ARES_TB(   Lineup.ARES,   "ARES TB"),
+    ARES_THS(  Lineup.ARES,   "ARES THS"),
+    CRONOS_OLD(Lineup.CRONOS, "CRONOS OLD"),
+    CRONOS_L(  Lineup.CRONOS, "CRONOS L"),
+    CRONOS_NG( Lineup.CRONOS, "CRONOS NG");
 
 
     private final String name;

@@ -1,8 +1,8 @@
 package src.model;
 
 public enum Lineup {
-    CRONOS("Cronos"),
-    ARES("Ares");
+    CRONOS("CRONOS"),
+    ARES(  "ARES");
     private final String lineupName;
 
     Lineup(String lineupName){
