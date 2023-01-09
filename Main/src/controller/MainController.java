@@ -40,32 +40,30 @@ public class MainController implements Initializable {
 
         // Evente Listener ComboBox
         comboBox.valueProperty().addListener((obs, oldValue, newValue) -> {
-            treeReference();
+            treeReference(newValue);
             titledModels.setDisable(false);
             titledModels.setExpanded(true);
         });
 
     }
 
-    public void treeReference(){
+    public void treeReference(Lineup newValue){
 
             //Lineup
 
-            ComboBox<Lineup> newValue = comboBox;
-
-            TreeItem setTreeView = new TreeItem<>(newValue.getValue());
+            TreeItem setTreeView = new TreeItem<>(newValue);
             setTreeView.setExpanded(true);
 
             //Models
             for(Categories cat: Categories.values()){
 
-                if(cat.getLineup().equals(newValue.getValue())){
-                    TreeItem<Categories> categoriItem = new TreeItem<>(cat);
-                    setTreeView.getChildren().add(categoriItem);
+                if(cat.getLineup().equals(newValue)){
+                    TreeItem<Categories> categoryItem = new TreeItem<>(cat);
+                    setTreeView.getChildren().add(categoryItem);
 
                     for (Models mod: Models.values()){
-                        if (mod.getCategories().equals(categoriItem.getValue())){
-                            categoriItem.getChildren().add( new TreeItem(mod));
+                        if (mod.getCategories().equals(categoryItem.getValue())){
+                            categoryItem.getChildren().add( new TreeItem(mod));
                         }
 
                     }

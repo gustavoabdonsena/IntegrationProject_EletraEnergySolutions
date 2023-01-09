@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="922745d3-3bbe-4b04-828f-8746e891485e" name="Changes" comment="" />
+    <list default="true" id="922745d3-3bbe-4b04-828f-8746e891485e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/AppMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/AppMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/src/resources/view/mainview.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/resources/view/MainView.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2K63QPYpk4Yqez8qR49ZVMB8pzw" />
   <component name="ProjectViewState">

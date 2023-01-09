@@ -19,7 +19,7 @@ public class AppMain extends Application {
 
         primaryStage.setTitle( "Main Menu");
 
-        FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("resources/view/mainview.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("resources/view/MainView.fxml"));
         
         Scene scene = new Scene(fxmlLoader.load(),550,400);
 
